@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+copy1.tsx
+copy2.tsx
 
 # production
 /build
