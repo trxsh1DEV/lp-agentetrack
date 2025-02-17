@@ -17,7 +17,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
-import BlogSection from "./home/blog";
+import BlogSection from "./blog";
 
 // const features = [
 //   {
