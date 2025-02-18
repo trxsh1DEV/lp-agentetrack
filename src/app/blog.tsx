@@ -29,7 +29,7 @@ const BlogSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#1a1a2e] text-white py-16 px-8">
+    <section className="container px-8 py-16 text-white">
       {/* Blog Header */}
       <div className="max-w-6xl mx-auto mb-12">
         <h1 className="text-5xl font-bold mb-8">
@@ -64,7 +64,7 @@ const BlogSection = () => {
           </Card>
         ))}
       </div>
-    </div>
+    </section>
     // </div>
   );
 };
