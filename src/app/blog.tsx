@@ -29,13 +29,13 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="container px-8 py-16 text-white">
+    <section className="container mx-auto px-8 py-16 text-white">
       {/* Blog Header */}
-      <div className="max-w-6xl mx-auto mb-12">
-        <h1 className="text-5xl font-bold mb-8">
-          Agent Tracker <span className="font-normal">Blog</span>
-        </h1>
-      </div>
+      {/* <div className="max-w-6xl mb-12"> */}
+      <h1 className="text-5xl font-bold mb-8">
+        Agent Tracker <span className="font-normal">Blog</span>
+      </h1>
+      {/* </div> */}
 
       {/* Blog Grid */}
       {/* <div className="max-w-6xl mx-auto"> */}
