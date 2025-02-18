@@ -390,7 +390,7 @@ const FAQSection = () => {
                 value={`item-${index}`}
                 className="border border-white/20 rounded-lg overflow-hidden bg-slate-900/50"
               >
-                <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-slate-800/50 text-[1.115rem]">
+                <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-slate-800/50 text-[1.118rem]">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="px-4 py-2">
@@ -406,7 +406,7 @@ const FAQSection = () => {
                 value={`item-${index + 4}`}
                 className="border border-white/20 rounded-lg overflow-hidden bg-slate-900/50"
               >
-                <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-slate-800/50 text-[1.115rem]">
+                <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-slate-800/50 text-[1.118rem]">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="px-4 py-2">
