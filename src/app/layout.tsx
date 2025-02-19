@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,11 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <GoogleTagManager gtmId="GTM-XYZ" />
       <body className={`${poppins.style} antialiased bg-slate-900`}>
         <main>
+          <Toaster />
           <Navbar />
           {children}
-          <Toaster />
         </main>
       </body>
     </html>
