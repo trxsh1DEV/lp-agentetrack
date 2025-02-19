@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <GoogleTagManager gtmId="GTM-XYZ" />
+      <GoogleTagManager gtmId="GTM-53QPWRBG" />
       <body className={`${poppins.style} antialiased bg-slate-900`}>
         <main>
           <Toaster />
