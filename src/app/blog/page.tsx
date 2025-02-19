@@ -1,9 +1,10 @@
 "use client";
 
+import { BASE_URL } from "@/utils/request";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-interface Post {
+export interface Post {
   id: number;
   title: string;
   image: string;
@@ -15,9 +16,9 @@ export default function BlogPage() {
 
   useEffect(() => {
     // Utilizando API fake para obter os posts
-    fetch("http://localhost:3003/posts")
+    fetch(`${BASE_URL}/posts`)
       .then((res) => res.json())
-      .then((data: Post[]) => setPosts(data.slice(0, 10)))
+      .then((data: Post[]) => setPosts(data.slice(0, 20)))
       .catch((error) => console.error("Erro ao buscar os posts:", error));
   }, []);
 
@@ -40,7 +41,7 @@ export default function BlogPage() {
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-              <p className="">
+              <p>
                 {post.content.length > 100
                   ? post.content.substring(0, 100)
                   : post.content}

@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { BASE_URL } from "@/utils/request";
 
 // Configurando o marked para converter quebras de linha simples
 // marked.setOptions({
@@ -70,7 +71,7 @@ export default function NewPostPage() {
     }
 
     try {
-      const res = await fetch("http://localhost:3003/posts", {
+      const res = await fetch(`${BASE_URL}/posts`, {
         method: "POST",
         body: formData,
       });

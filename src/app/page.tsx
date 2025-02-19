@@ -11,10 +11,10 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { Input } from "@/components/ui/input";
 import BlogSection from "./blog";
 import { FAQSection } from "./faq";
 import { ChatWidget } from "@/components/chat-widget";
+import { FormSection } from "./form-section";
 
 // const features = [
 //   {
@@ -166,7 +166,7 @@ const LandingPage = () => {
                 <span className="font-bold">
                   Você sabe o que a sua equipe faz no home-office?
                 </span>{" "}
-                Com o Agent Track,{" "}
+                Com o Agente Track,{" "}
                 <span className="font-bold">você tem controle total</span> sobre
                 os dispositivos da sua empresa, garantindo mais{" "}
                 <span className="font-bold">
@@ -294,57 +294,7 @@ const LandingPage = () => {
 
         <FAQSection />
 
-        <section
-          className="container mx-auto flex items-center justify-center py-16"
-          id="formulary"
-        >
-          <Card className="w-full flex flex-col md:flex-row p-6 bg-transparent border-none">
-            {/* Left Section */}
-            <div className="flex-1 text-white p-6 flex flex-col justify-center">
-              <h2 className="text-5xl font-bold mb-4">
-                Solicite sua demonstração{" "}
-                <span className="text-emerald-300"> gratuita!</span>
-              </h2>
-              <Image
-                src="/images/form2.png"
-                alt="Form image"
-                // fill={true}
-                width={300}
-                height={300}
-              />
-            </div>
-
-            {/* Right Section - Form */}
-            <CardContent className="flex-1 flex flex-col p-6 gap-8">
-              <Input
-                type="text"
-                placeholder="Nome completo"
-                className="bg-white py-6"
-              />
-              <Input
-                type="tel"
-                placeholder="Telefone"
-                className="bg-white py-6"
-              />
-              <Input
-                type="text"
-                placeholder="Cargo"
-                className="bg-white py-6"
-              />
-              <Input
-                type="email"
-                placeholder="E-mail"
-                className="bg-white py-6"
-              />
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-xl py-6 hover:opacity-85"
-              >
-                Enviar
-              </Button>
-            </CardContent>
-          </Card>
-        </section>
+        <FormSection />
 
         <BlogSection />
       </div>

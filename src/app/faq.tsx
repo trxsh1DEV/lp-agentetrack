@@ -10,7 +10,7 @@ import Image from "next/image";
 export const FAQSection = () => {
   const faqItems = [
     {
-      question: "O que é o Agent Track e como ele funciona?",
+      question: "O que é o Agente Track e como ele funciona?",
       answer: "Conteúdo da resposta aqui...",
     },
     {
@@ -22,15 +22,15 @@ export const FAQSection = () => {
       answer: "Conteúdo da resposta aqui...",
     },
     {
-      question: "O Agent Track é para minha empresa?",
+      question: "O Agente Track é para minha empresa?",
       answer: "Conteúdo da resposta aqui...",
     },
     {
-      question: "O Agent Track pode ser instalado em qualquer computador?",
+      question: "O Agente Track pode ser instalado em qualquer computador?",
       answer: "Conteúdo da resposta aqui...",
     },
     {
-      question: "O Agent Track garante a segurança dos dados da empresa?",
+      question: "O Agente Track garante a segurança dos dados da empresa?",
       answer: "Conteúdo da resposta aqui...",
     },
     {
@@ -38,7 +38,7 @@ export const FAQSection = () => {
       answer: "Conteúdo da resposta aqui...",
     },
     {
-      question: "Como a empresa pode começar a usar o Agent Track?",
+      question: "Como a empresa pode começar a usar o Agente Track?",
       answer: "Conteúdo da resposta aqui...",
     },
   ];

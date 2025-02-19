@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { marked } from "marked";
+import { BASE_URL } from "@/utils/request";
 
 interface Post {
   id: number;
@@ -18,7 +19,7 @@ export default function PostDetailPage() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:3003/posts/${id}`)
+      fetch(`${BASE_URL}/posts/${id}`)
         .then((res) => {
           if (!res.ok) throw new Error("Post não encontrado");
           return res.json();
@@ -49,7 +50,7 @@ export default function PostDetailPage() {
       >
         Voltar
       </button>
-      <div className="bg-white rounded shadow p-6">
+      <div className="w-full rounded shadow p-6 bg-slate-300">
         <img
           src={post.image}
           alt="Imagem do post"
@@ -57,7 +58,8 @@ export default function PostDetailPage() {
         />
         <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
         <div
-          className="text-gray-800 prose"
+          className="prose w-full !max-w-none"
+          // prose-headings:text-white prose-strong:text-white prose-blockquote:text-white
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
       </div>
