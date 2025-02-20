@@ -15,6 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { BASE_URL } from "@/utils/request";
+import { useRouter } from "next/navigation";
 
 const formatPhoneNumber = (value: string) => {
   if (!value) return value;
@@ -55,6 +56,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export const FormSection = () => {
   const { toast } = useToast();
+  const router = useRouter();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -76,6 +78,7 @@ export const FormSection = () => {
         body: JSON.stringify(data),
       });
       form.reset();
+      router.push("/thanks");
       // await response.json();
       // toast({
       //   title: "Formulário enviado com sucesso",

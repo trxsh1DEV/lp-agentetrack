@@ -81,8 +81,8 @@ export const ChatWidget = () => {
         },
         body: JSON.stringify({ ...data, phone: formattedPhone }),
       });
-      form.reset();
       setIsOpen(false);
+      form.reset();
       router.push("/thanks");
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
