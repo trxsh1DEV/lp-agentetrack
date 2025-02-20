@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import GoogleAnalytics from "@/components/conversion-tracking";
+import { ConversionTracking } from "@/components/conversion-tracking";
 
 export default function ThankYouPage() {
   // sendGTMEvent({
@@ -12,7 +12,7 @@ export default function ThankYouPage() {
   // });
   return (
     <>
-      <GoogleAnalytics />
+      <ConversionTracking />
       <div className="min-h-[92vh] flex items-center justify-center p-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-white space-y-6 max-w-xl">

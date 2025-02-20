@@ -1,31 +1,16 @@
 "use client";
-
 import Script from "next/script";
-import * as gtag from "@/lib/gtag";
 
-const GoogleAnalytics = () => {
+export function ConversionTracking() {
   return (
-    <>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-      />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
-                      gtag('config', '${gtag.GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                      });
-                    `,
-        }}
-      />
-    </>
+    <Script id="conversion-tracking" strategy="afterInteractive">
+      {`
+        gtag('event', 'conversion', {
+          'send_to': 'AW-16871047013/fPfWCJnD7KAaEOX-3uw-',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      `}
+    </Script>
   );
-};
-
-export default GoogleAnalytics;
+}
