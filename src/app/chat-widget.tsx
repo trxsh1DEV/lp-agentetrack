@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -19,18 +19,40 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { BASE_URL } from "@/utils/request";
+import { useRouter } from "next/navigation";
 
-const formSchema = z.object({
-  fullName: z.string(),
-  email: z.string().email("Email inválido"),
-  phone: z.string(),
-});
+const formatPhoneNumber = (value: string) => {
+  if (!value) return value;
+  const phoneNumber = value.replace(/[^\d]/g, "");
+  if (phoneNumber.length > 11) return phoneNumber.slice(0, 11);
+  return phoneNumber.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+};
+
+const formSchema = z
+  .object({
+    fullName: z
+      .string()
+      .min(3, { message: "Digite seu nome" })
+      .refine((value) => value.trim().split(" ").length >= 2, {
+        message: "Digite seu nome completo",
+      }),
+    phone: z
+      .string()
+      .min(11, { message: "Número inválido!" })
+      .max(12, { message: "Número inválido!" }),
+    email: z.string().email("Digite um e-mail válido"),
+  })
+  .refine((data) => data.email || data.phone, {
+    message: "Você deve fornecer pelo menos um e-mail ou telefone",
+    path: ["email", "phone"], // This will show the error message on both fields
+  });
 
 type FormValues = z.infer<typeof formSchema>;
 
 export const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
+  const router = useRouter();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -42,23 +64,26 @@ export const ChatWidget = () => {
   });
 
   const handleSubmit = async (data: FormValues) => {
+    const formattedPhone = `+55${data.phone.replace(/[^\d]/g, "")}`;
+    const message = encodeURIComponent(
+      `Olá, gostaria de saber mais sobre o Agente Track`
+    );
+    const whatsappURL = `https://wa.me/${formattedPhone}?text=${message}`;
+
+    // Redireciona para o WhatsApp
+    window.open(whatsappURL, "_blank");
+
     try {
-      const response = await fetch(`${BASE_URL}/form`, {
+      await fetch(`${BASE_URL}/form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, phone: formattedPhone }),
       });
-      await response.json();
       form.reset();
-      toast({
-        title: "Mensagem enviada com sucesso",
-        description: "Entraremos em contato em breve",
-        variant: "success",
-        className: "bg-green-500",
-      });
       setIsOpen(false);
+      router.push("/thanks");
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       toast({
@@ -132,11 +157,23 @@ export const ChatWidget = () => {
                     <FormItem>
                       <FormLabel>Telefone</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="Telefone"
-                          type="tel"
-                          className="bg-gray-50"
-                          {...field}
+                        <Controller
+                          name="phone"
+                          control={form.control}
+                          render={({ field }) => (
+                            <Input
+                              {...field}
+                              placeholder="Telefone, Ex: 99123456789"
+                              type="tel"
+                              className="bg-gray-50"
+                              value={formatPhoneNumber(field.value)}
+                              onChange={(e) =>
+                                field.onChange(
+                                  e.target.value.replace(/\D/g, "")
+                                )
+                              }
+                            />
+                          )}
                         />
                       </FormControl>
                       <FormMessage />
@@ -156,9 +193,14 @@ export const ChatWidget = () => {
       ) : (
         <Button
           onClick={() => setIsOpen(true)}
-          className="bg-transparent w-28 h-28"
+          className="bg-transparent hover:bg-transparent shadow-none rounded-full"
         >
-          <Image src="/icons/whatsapp.png" alt="Chat icon" fill={true} />
+          <Image
+            src="/icons/whatsapp.png"
+            alt="Chat icon"
+            height={100}
+            width={100}
+          />
         </Button>
       )}
     </div>

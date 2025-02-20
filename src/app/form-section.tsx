@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
@@ -16,11 +16,34 @@ import {
 } from "@/components/ui/form";
 import { BASE_URL } from "@/utils/request";
 
+const formatPhoneNumber = (value: string) => {
+  if (!value) return value;
+  const phoneNumber = value.replace(/[^\d]/g, "");
+  const phoneNumberLength = phoneNumber.length;
+
+  if (phoneNumberLength < 3) return phoneNumber;
+  if (phoneNumberLength < 7) {
+    return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(2)}`;
+  }
+  return `(${phoneNumber.slice(0, 2)}) ${phoneNumber.slice(
+    2,
+    7
+  )}-${phoneNumber.slice(7, 11)}`;
+};
+
 const formSchema = z
   .object({
-    fullName: z.string().min(1, { message: "Digite seu nome" }),
-    phone: z.string(),
-    position: z.string(),
+    fullName: z
+      .string()
+      .min(3, { message: "Digite seu nome" })
+      .refine((value) => value.trim().split(" ").length >= 2, {
+        message: "Digite seu nome completo",
+      }),
+    phone: z
+      .string()
+      .min(11, { message: "Número inválido!" })
+      .max(12, { message: "Número inválido!" }),
+    position: z.string().max(50),
     email: z.string().email("Digite um e-mail válido"),
   })
   .refine((data) => data.email || data.phone, {
@@ -45,21 +68,21 @@ export const FormSection = () => {
 
   const handleSubmit = async (data: FormValues) => {
     try {
-      const response = await fetch(`${BASE_URL}/form`, {
+      await fetch(`${BASE_URL}/form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      await response.json();
       form.reset();
-      toast({
-        title: "Formulário enviado com sucesso",
-        description: "Verifique seu e-mail para testar nosso software",
-        variant: "success",
-        className: "bg-green-500",
-      });
+      // await response.json();
+      // toast({
+      //   title: "Formulário enviado com sucesso",
+      //   description: "Verifique seu e-mail para testar nosso software",
+      //   variant: "success",
+      //   className: "bg-green-500",
+      // });
     } catch (err: any) {
       toast({
         title: "Ocorreu um erro",
@@ -118,11 +141,21 @@ export const FormSection = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input
-                        placeholder="Telefone"
-                        type="tel"
-                        className="bg-white py-6"
-                        {...field}
+                      <Controller
+                        name="phone"
+                        control={form.control}
+                        render={({ field }) => (
+                          <Input
+                            {...field}
+                            placeholder="Telefone, Ex: (11) 99999-9999"
+                            type="tel"
+                            className="bg-white py-6"
+                            value={formatPhoneNumber(field.value)}
+                            onChange={(e) =>
+                              field.onChange(e.target.value.replace(/\D/g, ""))
+                            }
+                          />
+                        )}
                       />
                     </FormControl>
                     <FormMessage />

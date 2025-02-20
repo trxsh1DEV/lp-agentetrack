@@ -13,7 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import BlogSection from "./blog";
 import { FAQSection } from "./faq";
-import { ChatWidget } from "@/components/chat-widget";
+import { ChatWidget } from "@/app/chat-widget";
 import { FormSection } from "./form-section";
 
 // const features = [
@@ -156,6 +156,7 @@ const LandingPage = () => {
                 alt="Image the man in the computer"
                 height={300}
                 width={600}
+                sizes="width: 'auto', height: 'auto'"
                 // fill={true}
               />
             </div>

@@ -44,68 +44,53 @@ export const FAQSection = () => {
   ];
 
   return (
-    // <div className="min-h-screen bg-slate-950 text-white p-8">
-    <section className="container py-16 px-8 text-white">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Left Column */}
-        <div className="flex flex-col items-center justify-start">
-          <h1 className="text-5xl font-bold mb-4">FAQ</h1>
-          {/* <div className=""> */}
-          <Image
-            src="/images/faq.png"
-            alt="FAQ image"
-            width={700}
-            height={300}
-          />
-          {/* </div> */}
-          <Button
-            className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-8 rounded-md w-full text-xl mt-2"
-            onClick={() =>
-              document
-                .getElementById("formulary")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            QUERO TESTAR GRATUITAMENTE!
-          </Button>
-        </div>
+    <section className="container mx-auto py-16 px-4 md:px-8 text-white">
+      {/* FAQ Title */}
+      <h1 className="text-5xl font-bold text-center mb-4">FAQ</h1>
+      <div className="flex justify-center mb-4">
+        <Image
+          src="/images/faq.png"
+          alt="FAQ image"
+          width={300}
+          height={150}
+          className="w-auto h-auto"
+        />
+      </div>
 
-        {/* Right Columns - FAQ Items */}
-        <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
-          <Accordion type="single" collapsible className="space-y-10">
-            {faqItems.slice(0, 4).map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="border border-white/20 rounded-lg overflow-hidden bg-slate-900/50"
-              >
-                <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-slate-800/50 text-[1.118rem]">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
+      {/* FAQ Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {faqItems.map((item, index) => (
+          <Accordion key={index} type="single" collapsible className="w-full">
+            <AccordionItem
+              value={`item-${index}`}
+              className="border border-white/20 rounded-lg bg-transparent"
+            >
+              <AccordionTrigger className="px-6 py-4 hover:no-underline text-left text-xl">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-6 py-4">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
-          <Accordion type="single" collapsible className="space-y-10">
-            {faqItems.slice(4).map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index + 4}`}
-                className="border border-white/20 rounded-lg overflow-hidden bg-slate-900/50"
-              >
-                <AccordionTrigger className="px-4 py-2 hover:no-underline hover:bg-slate-800/50 text-[1.118rem]">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        ))}
+      </div>
+
+      {/* CTA Button */}
+      <div className="flex justify-center mt-8 md:mt-12">
+        <Button
+          className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-8 rounded-md lg:text-xl sm:text-lg"
+          onClick={() =>
+            document
+              .getElementById("formulary")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          QUERO TESTAR GRATUITAMENTE
+        </Button>
       </div>
     </section>
   );
 };
+
+export default FAQSection;
