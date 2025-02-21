@@ -51,7 +51,7 @@ export default function BlogPage() {
           </Link>
         ))}
       </div>
-      <Link
+      {/* <Link
         href="/blog/new_boreum"
         className="fixed bottom-20 right-20 bg-green-500 text-white rounded-full p-4 hover:bg-green-600 shadow-lg"
       >
@@ -69,7 +69,7 @@ export default function BlogPage() {
             d="M12 4v16m8-8H4"
           />
         </svg>
-      </Link>
+      </Link> */}
     </div>
   );
 }

@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "infonova.com.br",
+        hostname: "agentezero-api.infonova.com.br",
         port: "",
         pathname: "/**",
       },

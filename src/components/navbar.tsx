@@ -6,7 +6,11 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo e Nome da Empresa */}
         <Link className="flex items-center gap-2" href="/">
-          <img src="/icons/logo.svg" alt="Logo" className="h-10 w-10" />
+          <img
+            src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/logo.svg"
+            alt="Logo"
+            className="h-10 w-10"
+          />
           <span className="text-xl font-bold">Agente Track</span>
         </Link>
 

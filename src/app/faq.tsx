@@ -49,7 +49,7 @@ export const FAQSection = () => {
       <h1 className="text-5xl font-bold text-center mb-4">FAQ</h1>
       <div className="flex justify-center mb-4">
         <Image
-          src="/images/faq.png"
+          src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/images/faq.png"
           alt="FAQ image"
           width={300}
           height={150}

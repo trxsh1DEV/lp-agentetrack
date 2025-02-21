@@ -64,7 +64,7 @@ export default function ThankYouPage() {
 
           {/* <div className="relative bg-red-500"> */}
           <Image
-            src="/images/thanks.png"
+            src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/images/thanks.png"
             alt="Team holding thank you sign"
             width={600}
             height={600}

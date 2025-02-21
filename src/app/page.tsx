@@ -15,6 +15,8 @@ import BlogSection from "./blog";
 import { FAQSection } from "./faq";
 import { ChatWidget } from "@/app/chat-widget";
 import { FormSection } from "./form-section";
+import FeaturesPage from "./features";
+import PartnersPage from "./partners";
 
 // const features = [
 //   {
@@ -133,13 +135,13 @@ const LandingPage = () => {
 
           {/* Right Column - Video Player Placeholder */}
           <div className="rounded-lg bg-gray-100 aspect-video mb-16">
-            <div className="w-full h-full flex items-center justify-center">
-              <img
-                src="/api/placeholder/640/360"
-                alt="Video placeholder"
-                className="rounded-lg"
+            <video className="w-full h-full rounded-lg" controls preload="auto">
+              <source
+                src="https://agentezero-api.infonova.com.br/static/files/content/video/video_lp.mp4"
+                type="video/mp4"
               />
-            </div>
+              Seu navegador não suporta vídeos.
+            </video>
           </div>
         </section>
 
@@ -194,104 +196,9 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section className="container py-16 mx-auto text-white" id="features">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              A ferramenta mais completa do mercado
-            </h2>
-            <div className="grid grid-cols-4 gap-8">
-              <FeatureCard
-                icon={"/icons/icon_1_pb.png"}
-                title="Gerenciamento remoto de funcionários"
-                description="Monitore o tempo de uso e os sites acessados para garantir eficiência no home office."
-              />
-              <FeatureCard
-                icon={"/icons/icon_2_pb.png"}
-                title="Gerenciamento de dispositivos"
-                description="Gerencie permissões e configurações dos dispositivos de forma remota e centralizada."
-              />
-              <FeatureCard
-                icon={"/icons/icon_3_pb.png"}
-                title="Inventário de TI"
-                description="Tenha um registro completo e atualizado dos dispositivos da empresa em um só lugar"
-              />
-              <FeatureCard
-                icon={"/icons/icon_4_pb.png"}
-                title="Rastreamento e geolocalização"
-                description="Saiba onde estão os dispositivos corporativos em tempo real para maior segurança"
-              />
-              <FeatureCard
-                icon={"/icons/icon_5_pb.png"}
-                title="Gestão de Software"
-                description="Instale, atualize ou remova programas remotamente com poucos cliques."
-              />
-              <FeatureCard
-                icon={"/icons/icon_6_pb.png"}
-                title="Mensageria"
-                description="Monitore o tempo de uso e os sites acessados para garantir eficiência no home office."
-              />
+        <FeaturesPage />
 
-              <FeatureCard
-                icon={"/icons/icon_7_pb.png"}
-                title="Conformidade com a Estrutura"
-                description="Garanta que todos os dispositivos sigam as políticas de TI da empresa."
-              />
-
-              <FeatureCard
-                icon={"/icons/icon_8_pb.png"}
-                title="Instalação Rápida e Simples"
-                description="Configure em minutos e comece a gerenciar sua equipe sem complicação!"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Partners Section */}
-        <section className="container mx-auto py-16 text-white">
-          <div className="max-w-6xl">
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Nossos parceiros
-            </h2>
-            <div className="grid grid-cols-4 gap-8">
-              {[
-                "/images/abecom.webp",
-                "/images/psa.png",
-                "/images/e-deploy.png",
-                "/images/ribeiro.png",
-                "/images/box_delivery.svg",
-                "/images/beneo.svg",
-                "/images/vital_works.svg",
-                "/images/medcof.svg",
-              ].map((src, index) => (
-                <div
-                  key={index}
-                  className="w-full aspect-[4/3] flex items-center justify-center bg-white rounded-lg overflow-hidden"
-                >
-                  <Image
-                    width={300}
-                    height={300}
-                    alt="Our partners"
-                    src={src}
-                    className="object-contain w-full h-full p-2"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="w-full flex">
-              <Button
-                size="lg"
-                className="mx-auto bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8 mt-8"
-                onClick={() =>
-                  document
-                    .getElementById("formulary")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Quero testar gratuitamente!
-              </Button>
-            </div>
-          </div>
-        </section>
+        <PartnersPage />
 
         <FAQSection />
 
@@ -301,30 +208,6 @@ const LandingPage = () => {
       </div>
       <ChatWidget />
     </>
-  );
-};
-
-const FeatureCard = ({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-}) => {
-  return (
-    <Card className="h-full bg-transparent border-none text-white">
-      <CardContent className="pt-6">
-        <div className="space-y-2">
-          <div className="flex justify-center">
-            <Image height={120} width={120} src={icon} alt={icon} />
-          </div>
-          <h3 className="font-semibold text-center text-lg">{title}</h3>
-          <p className="text-gray-400 text-center">{description}</p>
-        </div>
-      </CardContent>
-    </Card>
   );
 };
 

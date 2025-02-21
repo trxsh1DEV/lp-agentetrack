@@ -108,7 +108,7 @@ export const FormSection = () => {
             <span className="text-emerald-300"> gratuita!</span>
           </h2>
           <Image
-            src="/images/form2.png"
+            src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/images/form2.png"
             alt="Form image"
             width={300}
             height={300}
