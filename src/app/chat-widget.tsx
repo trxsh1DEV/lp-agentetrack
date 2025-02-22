@@ -196,7 +196,7 @@ export const ChatWidget = () => {
           className="bg-transparent hover:bg-transparent shadow-none rounded-full"
         >
           <Image
-            src="/icons/whatsapp.png"
+            src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/whatsapp.png"
             alt="Chat icon"
             height={100}
             width={100}

@@ -154,7 +154,7 @@ const LandingPage = () => {
             {/* Left Column - Content */}
             <div className="flex-1">
               <Image
-                src="/Imagem_01_B.png"
+                src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/images/Imagem_01_B.png"
                 alt="Image the man in the computer"
                 height={300}
                 width={600}
