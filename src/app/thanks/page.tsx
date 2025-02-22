@@ -1,18 +1,28 @@
 "use client";
 
+import Head from "next/head";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ConversionTracking } from "@/components/conversion-tracking";
 
 export default function ThankYouPage() {
-  // sendGTMEvent({
-  //   event: "conversion",
-  //   value: { send_to: "AW-16871047013/fPfWCJnD7KAaEOX-3uw-" },
-  // });
   return (
     <>
-      <ConversionTracking />
+      <Head>
+        <script
+          id="conversion-tracking"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('event', 'conversion', {
+                'send_to': 'AW-16871047013/fPfWCJnD7KAaEOX-3uw-',
+                'value': 1.0,
+                'currency': 'BRL'
+              });
+            `,
+          }}
+        />
+      </Head>
+
       <div className="min-h-[92vh] flex items-center justify-center p-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="text-white space-y-6 max-w-xl">
@@ -62,15 +72,12 @@ export default function ThankYouPage() {
             </div>
           </div>
 
-          {/* <div className="relative bg-red-500"> */}
           <Image
             src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/images/thanks.png"
             alt="Team holding thank you sign"
             width={600}
             height={600}
-            //   className="w-full"
           />
-          {/* </div> */}
         </div>
       </div>
     </>
