@@ -90,7 +90,7 @@ export default function NewPostPage() {
       if (!res.ok) {
         throw new Error("Erro ao criar post");
       }
-      router.push("/blog");
+      router.push("/adm/blog");
     } catch (err) {
       console.error(err);
       alert("Erro ao criar post");

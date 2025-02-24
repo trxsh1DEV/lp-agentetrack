@@ -13,6 +13,14 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Agente Track",
+  icons: {
+    icon: [
+      {
+        url: "/logo.svg", // /public path
+        href: "/logo.svg", // /public path
+      },
+    ],
+  },
   description: "Gerencie todos seus ativos de TI com Agente Track",
 };
 

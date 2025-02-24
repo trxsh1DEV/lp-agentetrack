@@ -35,9 +35,12 @@ export default function BlogPage() {
   // Função para deletar o post
   const handleDelete = async (id: number) => {
     try {
-      await fetch(`${BASE_URL}/posts/${id}`, {
+      const res = await fetch(`${BASE_URL}/posts/${id}`, {
         method: "DELETE",
       });
+      if (!res.ok) {
+        throw new Error("Erro ao deletar post");
+      }
 
       // Atualizando o estado diretamente sem refazer a requisição
       setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id));
