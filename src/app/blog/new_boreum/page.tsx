@@ -162,6 +162,7 @@ export default function NewPostPage() {
                 <FormControl>
                   <Textarea
                     placeholder="Escreva uma meta descrição (máx. 160 caracteres)"
+                    className="h-48 resize-none"
                     {...field}
                   />
                 </FormControl>
@@ -178,7 +179,7 @@ export default function NewPostPage() {
                 <FormControl>
                   <Textarea
                     placeholder="Escreva seu post usando markdown..."
-                    className="h-48"
+                    className="h-48 resize-y"
                     {...field}
                   />
                 </FormControl>
