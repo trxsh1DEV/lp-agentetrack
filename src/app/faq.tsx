@@ -85,16 +85,17 @@ export const FAQSection = () => {
       </div>
 
       {/* CTA Button */}
-      <div className="flex justify-center mt-8 md:mt-12">
+      <div className="flex justify-center mt-4 md:mt-6">
         <Button
-          className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-8 rounded-md lg:text-xl sm:text-lg"
+          size="lg"
+          className="mx-auto bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8 mt-8 font-bold"
           onClick={() =>
             document
               .getElementById("formulary")
               ?.scrollIntoView({ behavior: "smooth" })
           }
         >
-          QUERO TESTAR GRATUITAMENTE
+          QUERO TESTAR GRATUITAMENTE!
         </Button>
       </div>
     </section>

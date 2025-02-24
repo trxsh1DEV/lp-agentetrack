@@ -68,7 +68,7 @@ export const ChatWidget = () => {
     const message = encodeURIComponent(
       `Olá, gostaria de saber mais sobre o Agente Track`
     );
-    const whatsappURL = `https://wa.me/${formattedPhone}?text=${message}`;
+    const whatsappURL = `https://wa.me/11969642568?text=${message}`;
 
     // Redireciona para o WhatsApp
     window.open(whatsappURL, "_blank");
@@ -84,7 +84,6 @@ export const ChatWidget = () => {
       setIsOpen(false);
       form.reset();
       router.push("/thanks");
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       toast({
         title: "Ocorreu um erro",

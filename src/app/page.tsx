@@ -109,26 +109,26 @@ const LandingPage = () => {
             {/* Form */}
             <div className="w-full flex gap-4">
               <Button
-                size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8"
+                // size="lg"
+                className="bg-gradient-to-r from-green-600 to-emerald-500 text-[1.4rem] py-8 font-bold"
                 onClick={() =>
                   document
                     .getElementById("formulary")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Quero testar gratuitamente!
+                QUERO TESTAR GRATUITAMENTE!
               </Button>
               <Button
-                size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8"
+                // size="lg"
+                className="bg-gradient-to-r from-green-600 to-emerald-500 text-[1.4rem] py-8 font-bold"
                 onClick={() =>
                   document
                     .getElementById("features")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Saiba mais
+                SAIBA MAIS
               </Button>
             </div>
           </div>
@@ -183,14 +183,14 @@ const LandingPage = () => {
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8"
+                className="bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8 font-bold"
                 onClick={() =>
                   document
                     .getElementById("formulary")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Quero testar gratuitamente!
+                QUERO TESTAR GRATUITAMENTE!
               </Button>
             </div>
           </div>

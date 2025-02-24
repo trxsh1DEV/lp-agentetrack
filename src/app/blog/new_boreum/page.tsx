@@ -19,7 +19,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { BASE_URL } from "@/utils/request";
 
-// Configurando o marked para converter quebras de linha simples
 // marked.setOptions({
 //   async: false,
 //   breaks: false,
@@ -32,13 +31,17 @@ import { BASE_URL } from "@/utils/request";
 //   walkTokens: null,
 // });
 
-// Definindo o schema do formulário
+// Definindo o schema atualizado do formulário
 const formSchema = z.object({
   title: z.string().min(1, "Título é obrigatório"),
   category: z.string().optional(),
   content: z.string().min(1, "Conteúdo é obrigatório"),
   image: z.any().optional(),
   preview: z.boolean(),
+  keyword: z.string().optional(), // Palavra-chave
+  metaDescription: z.string().max(160, "Máximo de 160 caracteres").optional(), // Meta descrição
+  imageDescription: z.string().optional(), // Descrição da imagem
+  externalLinks: z.string().optional(), // Links externos (URL separados por vírgula)
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -54,6 +57,10 @@ export default function NewPostPage() {
       content: "",
       image: undefined,
       preview: false,
+      keyword: "",
+      metaDescription: "",
+      imageDescription: "",
+      externalLinks: "",
     },
   });
 
@@ -66,6 +73,11 @@ export default function NewPostPage() {
     formData.append("title", data.title);
     formData.append("content", data.content);
     formData.append("category", data.category ?? "");
+    formData.append("keyword", data.keyword ?? "");
+    formData.append("metaDescription", data.metaDescription ?? "");
+    formData.append("imageDescription", data.imageDescription ?? "");
+    formData.append("externalLinks", data.externalLinks ?? "");
+
     if (data.image && data.image[0]) {
       formData.append("image", data.image[0]);
     }
@@ -127,6 +139,38 @@ export default function NewPostPage() {
           />
           <FormField
             control={form.control}
+            name="keyword"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Palavra-chave (SEO)</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Digite a palavra-chave principal"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="metaDescription"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Meta Descrição</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Escreva uma meta descrição (máx. 160 caracteres)"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="content"
             render={({ field }) => (
               <FormItem>
@@ -150,6 +194,38 @@ export default function NewPostPage() {
                 <FormLabel>Imagem</FormLabel>
                 <FormControl>
                   <Input type="file" accept="image/*" {...register("image")} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="imageDescription"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Descrição da Imagem</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Descreva a imagem para SEO e acessibilidade"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="externalLinks"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Links Externos</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Adicione links externos separados por vírgula"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

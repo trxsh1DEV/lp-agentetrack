@@ -4,6 +4,7 @@ import Script from "next/script"; // Importação necessária para scripts no Ne
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -65,8 +66,16 @@ export default function RootLayout({
 
         <main>
           <Toaster />
+          {/* <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          > */}
           <Navbar />
+
           {children}
+          {/* </ThemeProvider> */}
         </main>
       </body>
     </html>

@@ -1,10 +1,11 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
 export default function FeaturesPage() {
   return (
     <section className="container py-16 mx-auto text-white" id="features">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl">
         <h2 className="text-3xl font-bold text-center mb-12">
           A ferramenta mais completa do mercado
         </h2>
@@ -67,6 +68,19 @@ export default function FeaturesPage() {
             title="Instalação Rápida e Simples"
             description="Configure em minutos e comece a gerenciar sua equipe sem complicação!"
           />
+        </div>
+        <div className="flex justify-center md:mt-6">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8 font-bold"
+            onClick={() =>
+              document
+                .getElementById("formulary")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            QUERO TESTAR GRATUITAMENTE!
+          </Button>
         </div>
       </div>
     </section>
