@@ -104,7 +104,9 @@ const FeatureCard = ({
             <Image height={120} width={120} src={icon} alt={icon} />
           </div>
           <h3 className="font-semibold text-center text-lg">{title}</h3>
-          <p className="text-gray-400 text-center">{description}</p>
+          <p className="text-gray-400 text-center tracking-wider">
+            {description}
+          </p>
         </div>
       </CardContent>
     </Card>

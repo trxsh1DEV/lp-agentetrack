@@ -15,9 +15,9 @@ export const FAQSection = () => {
         "O Agente Track é um software de gerenciamento de dispositivos que permite monitorar, gerenciar e controlar remotamente os dispositivos da sua empresa, garantindo mais segurança, produtividade e eficiência para equipes presenciais e home office.",
     },
     {
-      question: "O Agente Track pode ser instalado em qualquer computador?",
+      question: "Como funciona a geolocalização dos dispositivos?",
       answer:
-        "Sim! O Agente Track é compatível com Windows, macOS e Linux, podendo ser instalado facilmente em qualquer máquina corporativa.",
+        "O Agente Track permite que você visualize a localização dos dispositivos corporativos em tempo real, garantindo mais segurança e controle sobre o patrimônio da empresa.",
     },
     {
       question: "Como funciona o controle de produtividade?",
@@ -25,19 +25,14 @@ export const FAQSection = () => {
         "O software monitora tempo de uso, sites acessados e aplicativos utilizados, gerando relatórios detalhados para que o gestor tenha visibilidade total da equipe.",
     },
     {
-      question: "O Agente Track garante a segurança dos dados da empresa?",
+      question: "Como a empresa pode começar a usar o Agente Track?",
       answer:
-        "Sim! Ele ajuda a manter a segurança de ativos de TI, impedindo o uso de softwares não autorizados e reduzindo riscos de vazamento de dados.",
+        "A instalação é simples e pode ser feita pelo próprio cliente ou com suporte da nossa equipe. Por apenas R$5/mês por máquina, você já pode começar a gerenciar seus dispositivos!",
     },
     {
-      question: "É possível instalar ou desinstalar programas remotamente?",
+      question: "É possível instalar ou desinstalar programas?",
       answer:
         "Sim! Com a funcionalidade de Gestão de Software, você pode instalar, remover ou atualizar programas sem precisar acessar fisicamente os dispositivos.",
-    },
-    {
-      question: "Como funciona a geolocalização dos dispositivos?",
-      answer:
-        "O Agente Track permite que você visualize a localização dos dispositivos corporativos em tempo real, garantindo mais segurança e controle sobre o patrimônio da empresa.",
     },
     {
       question: "O Agente Track é para minha empresa?",
@@ -45,9 +40,14 @@ export const FAQSection = () => {
         "Se sua empresa tem colaboradores em home office, equipes híbridas ou precisa gerenciar múltiplos dispositivos de TI, o Agente Track é a solução ideal. Ele reduz riscos, aumenta a produtividade e simplifica a gestão de ativos de TI, sendo indicado para negócios de qualquer porte.",
     },
     {
-      question: "Como a empresa pode começar a usar o Agente Track?",
+      question: "O Agente Track pode ser instalado em qualquer computador?",
       answer:
-        "A instalação é simples e pode ser feita pelo próprio cliente ou com suporte da nossa equipe. Por apenas R$5/mês por máquina, você já pode começar a gerenciar seus dispositivos!",
+        "Sim! O Agente Track é compatível com Windows, macOS e Linux, podendo ser instalado facilmente em qualquer máquina corporativa.",
+    },
+    {
+      question: "O Agente Track garante a segurança dos dados da empresa?",
+      answer:
+        "Sim! Ele ajuda a manter a segurança de ativos de TI, impedindo o uso de softwares não autorizados e reduzindo riscos de vazamento de dados.",
     },
   ];
 

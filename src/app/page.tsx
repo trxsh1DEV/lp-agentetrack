@@ -101,7 +101,7 @@ const LandingPage = () => {
               <span className="text-emerald-300">sua equipe</span>, onde quer
               que estejam!
             </h1>
-            <p className="text-lg mb-8 text-zinc-300">
+            <p className="text-lg mb-6 text-zinc-300 max-w-[540px] tracking-[0.04rem]">
               Produtividade, segurança e gestão de ativos de TI por apenas
               R$5/mês por máquina!
             </p>
@@ -135,13 +135,14 @@ const LandingPage = () => {
 
           {/* Right Column - Video Player Placeholder */}
           <div className="rounded-lg bg-gray-100 aspect-video mb-16">
-            <video className="w-full h-full rounded-lg" controls preload="auto">
-              <source
-                src="https://agentezero-api.infonova.com.br/static/files/content/video/video_lp.mp4"
-                type="video/mp4"
-              />
-              Seu navegador não suporta vídeos.
-            </video>
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/CHKbvMt4_Lk"
+              title="Agente Track Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </section>
 
