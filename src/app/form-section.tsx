@@ -228,13 +228,15 @@ export const FormSection = () => {
           </Form>
         </CardContent>
       </Card>
-      <Button
-        onClick={() => window.open("YOUR_MEETING_LINK_HERE", "_blank")}
-        // size="lg"
-        className="bg-gradient-to-r from-green-600 to-green-700 text-xl py-6 px-8 hover:opacity-85 mt-8 font-bold"
-      >
-        AGENDE UMA REUNIÃO CONOSCO!
-      </Button>
+      <div>
+        <Button
+          type="submit"
+          size="lg"
+          className="bg-gradient-to-r w-full from-green-600 to-green-700 text-xl py-6 hover:opacity-85 font-bold"
+        >
+          AGENDE UMA REUNIÃO
+        </Button>
+      </div>
     </section>
   );
 };

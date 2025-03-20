@@ -9,7 +9,7 @@ export default function FeaturesPage() {
         <h2 className="text-3xl font-bold text-center mb-12">
           A ferramenta mais completa do mercado
         </h2>
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           <FeatureCard
             icon={
               "https://agentezero-api.infonova.com.br/static/files/content/images_lp/icon_1_pb.png"
@@ -69,10 +69,10 @@ export default function FeaturesPage() {
             description="Configure em minutos e comece a gerenciar sua equipe sem complicação!"
           />
         </div>
-        <div className="flex justify-center md:mt-6">
+        <div className="flex justify-center mt-8 sm:mt-12 px-4">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-green-600 to-green-700 text-2xl py-8 font-bold"
+            className="bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
             onClick={() =>
               document
                 .getElementById("formulary")

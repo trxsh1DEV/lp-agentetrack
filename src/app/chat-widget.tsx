@@ -94,7 +94,7 @@ export const ChatWidget = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed md:bottom-4 md:right-4 -right-6 bottom-0 z-50">
       {isOpen ? (
         <Card className="w-[300px] bg-white shadow-xl">
           <div className="bg-emerald-600 p-4 flex justify-between items-center rounded-t-lg">

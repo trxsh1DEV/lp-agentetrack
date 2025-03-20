@@ -85,10 +85,10 @@ export const FAQSection = () => {
       </div>
 
       {/* CTA Button */}
-      <div className="flex justify-center mt-4 md:mt-6">
+      <div className="w-full flex mt-8 sm:mt-12 px-4">
         <Button
           size="lg"
-          className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-2xl py-8 mt-8 font-bold"
+          className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
           onClick={() =>
             document
               .getElementById("formulary")
