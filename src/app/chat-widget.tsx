@@ -181,7 +181,7 @@ export const ChatWidget = () => {
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-green-600 to-emerald-500"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700"
                 >
                   Iniciar Conversa
                 </Button>

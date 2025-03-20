@@ -110,7 +110,7 @@ const LandingPage = () => {
             <div className="w-full flex gap-4">
               <Button
                 // size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-[1.4rem] py-8 font-bold"
+                className="bg-gradient-to-r from-green-600 to-green-700 text-[1.4rem] py-8 font-bold"
                 onClick={() =>
                   document
                     .getElementById("formulary")
@@ -121,7 +121,7 @@ const LandingPage = () => {
               </Button>
               <Button
                 // size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-[1.4rem] py-8 font-bold"
+                className="bg-gradient-to-r from-green-600 to-green-700 text-[1.4rem] py-8 font-bold"
                 onClick={() =>
                   document
                     .getElementById("features")
@@ -136,7 +136,7 @@ const LandingPage = () => {
           {/* Right Column - Video Player Placeholder */}
           <div className="rounded-lg bg-gray-100 aspect-video mb-16">
             <iframe
-              className="w-full h-full rounded-lg"
+              className="w-full h-full"
               src="https://www.youtube.com/embed/CHKbvMt4_Lk"
               title="Agente Track Video"
               frameBorder="0"
@@ -184,7 +184,7 @@ const LandingPage = () => {
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8 font-bold"
+                className="bg-gradient-to-r from-green-600 to-green-700 text-2xl py-8 font-bold"
                 onClick={() =>
                   document
                     .getElementById("formulary")

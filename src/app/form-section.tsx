@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -45,6 +44,7 @@ const formSchema = z
       .min(11, { message: "Número inválido!" })
       .max(12, { message: "Número inválido!" }),
     position: z.string().max(50),
+    business: z.string().max(100),
     email: z.string().email("Digite um e-mail válido"),
   })
   .refine((data) => data.email || data.phone, {
@@ -63,6 +63,7 @@ export const FormSection = () => {
     defaultValues: {
       fullName: "",
       phone: "",
+      business: "",
       position: "",
       email: "",
     },
@@ -97,7 +98,7 @@ export const FormSection = () => {
 
   return (
     <section
-      className="container mx-auto flex items-center justify-center py-16"
+      className="container mx-auto flex flex-col items-center justify-center py-16"
       id="formulary"
     >
       <Card className="w-full flex flex-col md:flex-row p-6 bg-transparent border-none">
@@ -120,8 +121,24 @@ export const FormSection = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(handleSubmit)}
-              className="space-y-8"
+              className="space-y-4"
             >
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="E-mail"
+                        className="bg-white py-6"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="fullName"
@@ -130,6 +147,22 @@ export const FormSection = () => {
                     <FormControl>
                       <Input
                         placeholder="Nome completo"
+                        className="bg-white py-6"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="business"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="Nome da empresa"
                         className="bg-white py-6"
                         {...field}
                       />
@@ -181,35 +214,27 @@ export const FormSection = () => {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input
-                        placeholder="E-mail"
-                        className="bg-white py-6"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+
               <div>
                 <Button
                   type="submit"
                   size="lg"
-                  className="bg-gradient-to-r w-full from-green-600 to-emerald-500 text-xl py-6 hover:opacity-85 mt-6"
+                  className="bg-gradient-to-r w-full from-green-600 to-green-700 text-xl py-6 hover:opacity-85 mt-6 font-bold"
                 >
-                  Enviar
+                  TESTAR GRATUITAMENTE
                 </Button>
               </div>
             </form>
           </Form>
         </CardContent>
       </Card>
+      <Button
+        onClick={() => window.open("YOUR_MEETING_LINK_HERE", "_blank")}
+        // size="lg"
+        className="bg-gradient-to-r from-green-600 to-green-700 text-xl py-6 px-8 hover:opacity-85 mt-8 font-bold"
+      >
+        AGENDE UMA REUNIÃO CONOSCO!
+      </Button>
     </section>
   );
 };

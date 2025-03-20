@@ -36,7 +36,7 @@ export default function PartnersPage() {
         <div className="w-full flex md:mt-6">
           <Button
             size="lg"
-            className="mx-auto bg-gradient-to-r from-green-600 to-emerald-500 text-2xl py-8 mt-8 font-bold"
+            className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-2xl py-8 mt-8 font-bold"
             onClick={() =>
               document
                 .getElementById("formulary")
