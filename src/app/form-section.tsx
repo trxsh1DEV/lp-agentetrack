@@ -117,7 +117,7 @@ export const FormSection = () => {
         </div>
 
         {/* Right Section - Form */}
-        <CardContent className="flex-1 flex flex-col p-6">
+        <CardContent className="flex-1 flex flex-col p-6 pb-0 mt-2">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(handleSubmit)}
@@ -228,11 +228,17 @@ export const FormSection = () => {
           </Form>
         </CardContent>
       </Card>
+      <div></div>
       <div>
         <Button
-          type="submit"
           size="lg"
-          className="bg-gradient-to-r w-full from-green-600 to-green-700 text-xl py-6 hover:opacity-85 font-bold"
+          className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
+          onClick={() =>
+            window.open(
+              "https://calendar.app.google/V67Sbu37DXDErk2P9",
+              "_blank"
+            )
+          }
         >
           AGENDE UMA REUNIÃO
         </Button>
