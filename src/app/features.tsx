@@ -1,11 +1,12 @@
+import ButtonCta from "@/components/button-cta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
 export default function FeaturesPage() {
   return (
-    <section className="container py-16 mx-auto text-white" id="features">
-      <div className="max-w-6xl">
+    <section className="container mx-auto text-white py-16" id="features">
+      <div>
         <h2 className="text-3xl font-bold text-center mb-12">
           A ferramenta mais completa do mercado
         </h2>
@@ -70,17 +71,7 @@ export default function FeaturesPage() {
           />
         </div>
         <div className="flex justify-center mt-8 sm:mt-12 px-4">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
-            onClick={() =>
-              document
-                .getElementById("formulary")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            QUERO TESTAR GRATUITAMENTE!
-          </Button>
+          <ButtonCta />
         </div>
       </div>
     </section>
@@ -97,13 +88,15 @@ const FeatureCard = ({
   description: string;
 }) => {
   return (
-    <Card className="h-full bg-transparent border-none text-white">
+    <Card className="h-full bg-transparent text-white border-white border-2">
       <CardContent className="pt-6">
         <div className="space-y-2">
           <div className="flex justify-center">
             <Image height={120} width={120} src={icon} alt={icon} />
           </div>
-          <h3 className="font-semibold text-center text-lg">{title}</h3>
+          <h3 className="font-semibold text-center text-lg tracking-wider">
+            {title}
+          </h3>
           <p className="text-gray-400 text-center tracking-wider">
             {description}
           </p>

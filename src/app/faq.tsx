@@ -1,3 +1,4 @@
+import ButtonCta from "@/components/button-cta";
 import {
   Accordion,
   AccordionContent,
@@ -52,7 +53,10 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section className="container mx-auto py-16 px-4 md:px-8 text-white">
+    <section
+      className="container mx-auto py-16 px-4 md:px-8 text-white"
+      id="faq"
+    >
       {/* FAQ Title */}
       <h1 className="text-5xl font-bold text-center mb-4">FAQ</h1>
       <div className="flex justify-center mb-4">
@@ -86,17 +90,7 @@ export const FAQSection = () => {
 
       {/* CTA Button */}
       <div className="w-full flex mt-8 sm:mt-12 px-4">
-        <Button
-          size="lg"
-          className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
-          onClick={() =>
-            document
-              .getElementById("formulary")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          QUERO TESTAR GRATUITAMENTE!
-        </Button>
+        <ButtonCta className="mx-auto" />
       </div>
     </section>
   );

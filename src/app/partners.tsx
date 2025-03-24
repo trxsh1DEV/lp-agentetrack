@@ -1,3 +1,4 @@
+import ButtonCta from "@/components/button-cta";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -34,17 +35,7 @@ export default function PartnersPage() {
           ))}
         </div>
         <div className="w-full flex mt-8 sm:mt-12 px-4">
-          <Button
-            size="lg"
-            className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
-            onClick={() =>
-              document
-                .getElementById("formulary")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            QUERO TESTAR GRATUITAMENTE!
-          </Button>
+          <ButtonCta className="mx-auto" />
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { Linkedin, Mail, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -16,14 +17,47 @@ const Navbar = () => {
 
         {/* Links de Navegação */}
         <div className="flex space-x-6">
-          <Link href="/" className="text-gray-400 hover:text-teal-500">
+          <Link href="/" className="text-gray-400 hover:text-violet-500">
             Home
           </Link>
-          <Link href="/blog" className="text-gray-400 hover:text-teal-500">
+          <Link href="/blog" className="text-gray-400 hover:text-violet-500">
             Blog
           </Link>
-          <Link href="/about" className="text-gray-400 hover:text-teal-500">
+          <Link href="/about" className="text-gray-400 hover:text-violet-500">
             Sobre
+          </Link>
+          <Link
+            className="text-gray-400 hover:text-violet-500"
+            href="#features"
+          >
+            Recursos
+          </Link>
+          <Link className="text-gray-400 hover:text-violet-500" href="#faq">
+            FAQ
+          </Link>
+        </div>
+        <div className="flex space-x-4">
+          <Link
+            href={`https://wa.me/11969642568?text=${encodeURIComponent(
+              "Olá, gostaria de saber mais sobre o Agente Track"
+            )}`}
+            target="_blank"
+            className="text-gray-400 hover:text-green-500"
+          >
+            <MessageCircle size={20} />
+          </Link>
+          <Link
+            href="mailto:seuemail@email.com"
+            className="text-gray-400 hover:text-blue-500"
+          >
+            <Mail size={20} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/seu_perfil"
+            target="_blank"
+            className="text-gray-400 hover:text-blue-700"
+          >
+            <Linkedin size={20} />
           </Link>
         </div>
       </div>

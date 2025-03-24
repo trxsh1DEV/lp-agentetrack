@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter, Poppins, Roboto } from "next/font/google";
 import Script from "next/script"; // Importação necessária para scripts no Next.js
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const poppins = Poppins({
+const poppins = Roboto({
   subsets: ["latin"],
   weight: "400",
 });

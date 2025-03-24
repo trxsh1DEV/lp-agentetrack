@@ -105,6 +105,18 @@
     @apply bg-background text-foreground;
     font-family: "Roboto", sans-serif;
   }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .rotate-y-90 {
+    transform: rotateY(90deg);
+  }
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
 }
 
 .truncate {

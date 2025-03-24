@@ -219,9 +219,9 @@ export const FormSection = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="bg-gradient-to-r w-full from-green-600 to-green-700 text-xl py-6 hover:opacity-85 mt-6 font-bold"
+                  className="bg-gradient-to-r w-full from-violet-500 to-indigo-500 text-xl py-6 hover:opacity-85 mt-6 font-bold"
                 >
-                  TESTAR GRATUITAMENTE
+                  QUERO AGENDAR MINHA DEMONSTRAÇÃO
                 </Button>
               </div>
             </form>
@@ -232,7 +232,7 @@ export const FormSection = () => {
       <div>
         <Button
           size="lg"
-          className="mx-auto bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
+          className={`bg-gradient-to-r from-violet-500 to-indigo-500 text-xl sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto hover:scale-105 transform transition-transform duration-300`}
           onClick={() =>
             window.open(
               "https://calendar.app.google/V67Sbu37DXDErk2P9",

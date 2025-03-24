@@ -17,6 +17,8 @@ import { ChatWidget } from "@/app/chat-widget";
 import { FormSection } from "./form-section";
 import FeaturesPage from "./features";
 import PartnersPage from "./partners";
+import { FlipCarousel } from "./carousel";
+import { Bot, FileText, Wifi, Zap } from "lucide-react";
 
 // const features = [
 //   {
@@ -90,35 +92,40 @@ const LandingPage = () => {
   // );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
       {/* Hero Section */}
-      <section className="container mx-auto py-8 sm:py-16 lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+      <section className="py-8 sm:py-16 lg:grid lg:grid-cols-2 lg:gap-8 items-center">
         {/* Left Column */}
         <div className="mb-8 lg:mb-0">
           <h1 className="text-4xl sm:text-6xl mb-4 sm:mb-6 text-white tracking-wide">
-            <span className="text-emerald-300">Controle total</span> dos
-            dispositivos da <span className="text-emerald-300">sua equipe</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">
+              Controle total
+            </span>{" "}
+            dos dispositivos da{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">
+              sua equipe
+            </span>
             , onde quer que estejam!
           </h1>
-          <p className="text-base sm:text-lg mb-6 text-zinc-300 max-w-[540px] tracking-[0.04rem]">
+          <p className="text-base sm:text-xl mb-6 text-gray-400 max-w-[540px] tracking-[0.04rem]">
             Produtividade, segurança e gestão de ativos de TI por apenas R$5/mês
             por máquina!
           </p>
 
           {/* CTA Buttons */}
-          <div className="w-full flex flex-col sm:flex-row gap-4">
+          <div className="w-full flex flex-col sm:flex-row gap-4 tracking-wider">
             <Button
-              className="bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-lg sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("formulary")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              QUERO TESTAR GRATUITAMENTE!
+              QUERO AGENDAR MINHA DEMONSTRAÇÃO!
             </Button>
             <Button
-              className="bg-gradient-to-r from-green-600 to-green-700 text-lg sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-lg sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("features")
@@ -143,8 +150,43 @@ const LandingPage = () => {
         </div>
       </section>
 
+      <div className="flex justify-center items-center w-full p-4">
+        <div className="flex w-full max-w-4xl gap-7">
+          {[
+            {
+              icon: <Bot className="w-8 h-8 text-sky-500" />,
+              label: "Chatbot IA",
+            },
+            {
+              icon: <Zap className="w-8 h-8 text-sky-500" />,
+              label: "Automações",
+            },
+            {
+              icon: <FileText className="w-8 h-8 text-sky-500" />,
+              label: "Inventário",
+            },
+            {
+              icon: <Wifi className="w-8 h-8 text-sky-500" />,
+              label: "Conexão Remota",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center p-4 rounded bg-slate-900 transition-colors duration-200 w-full border-2 border-gray-600"
+            >
+              <div className="flex items-center justify-center w-12 h-12 bg-slate-800 rounded-full mb-4">
+                {item.icon}
+              </div>
+              <span className="text-white font-semibold tracking-wider">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Features Section */}
-      <section className="container mx-auto py-8 sm:py-16 text-white">
+      <section className="py-8 sm:py-16 text-white">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">
           Controle total <br />
           <p className="font-normal">Produtividade máxima</p>
@@ -181,14 +223,14 @@ const LandingPage = () => {
               tenha o controle que sua empresa precisa. Experimente agora!
             </p>
             <Button
-              className="bg-gradient-to-r from-green-600 to-green-700 text-xl sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-xl sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("formulary")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
             >
-              QUERO TESTAR GRATUITAMENTE!
+              QUERO AGENDAR MINHA DEMONSTRAÇÃO!
             </Button>
           </div>
         </div>
@@ -196,6 +238,7 @@ const LandingPage = () => {
 
       {/* Rest of the sections */}
       <FeaturesPage />
+      <FlipCarousel />
       <PartnersPage />
       <FAQSection />
       <FormSection />
