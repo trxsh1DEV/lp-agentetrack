@@ -47,13 +47,13 @@ const Navbar = () => {
             <MessageCircle size={20} />
           </Link>
           <Link
-            href="mailto:seuemail@email.com"
+            href="mailto:agentetrack@infonova.com.br"
             className="text-gray-400 hover:text-blue-500"
           >
             <Mail size={20} />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/seu_perfil"
+            href="https://www.linkedin.com/company/agente-track"
             target="_blank"
             className="text-gray-400 hover:text-blue-700"
           >
