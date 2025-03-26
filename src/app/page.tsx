@@ -115,7 +115,7 @@ const LandingPage = () => {
           {/* CTA Buttons */}
           <div className="w-full flex flex-col sm:flex-row gap-4 tracking-wider">
             <Button
-              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-lg sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-base sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("formulary")
@@ -125,7 +125,7 @@ const LandingPage = () => {
               QUERO AGENDAR MINHA DEMONSTRAÇÃO!
             </Button>
             <Button
-              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-lg sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-base sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("features")
@@ -151,7 +151,7 @@ const LandingPage = () => {
       </section>
 
       <div className="flex justify-center items-center w-full p-4">
-        <div className="flex w-full max-w-4xl gap-7">
+        <div className="grid grid-cols-2 sm:flex w-full max-w-4xl gap-4 sm:gap-7">
           {[
             {
               icon: <Bot className="w-8 h-8 text-sky-500" />,
@@ -172,12 +172,12 @@ const LandingPage = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-4 rounded bg-slate-900 transition-colors duration-200 w-full border-2 border-gray-600"
+              className="flex flex-col items-center justify-center p-4 rounded bg-slate-900 transition-colors duration-200 w-full max-w-xs border-2 border-gray-600"
             >
               <div className="flex items-center justify-center w-12 h-12 bg-slate-800 rounded-full mb-4">
                 {item.icon}
               </div>
-              <span className="text-white font-semibold tracking-wider">
+              <span className="text-white font-semibold tracking-wider text-center">
                 {item.label}
               </span>
             </div>
@@ -223,7 +223,7 @@ const LandingPage = () => {
               tenha o controle que sua empresa precisa. Experimente agora!
             </p>
             <Button
-              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-xl sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto"
+              className="bg-gradient-to-r from-violet-500 to-indigo-500 text-base sm:text-[1.4rem] py-6 sm:py-8 font-bold w-full sm:w-auto"
               onClick={() =>
                 document
                   .getElementById("formulary")

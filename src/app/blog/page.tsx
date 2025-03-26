@@ -18,7 +18,7 @@ export default function BlogPage() {
     // Utilizando API fake para obter os posts
     fetch(`${BASE_URL}/posts`)
       .then((res) => res.json())
-      .then((data: Post[]) => setPosts(data.slice(0, 20)))
+      .then((data: Post[]) => setPosts(data.slice(0, 50)))
       .catch((error) => console.error("Erro ao buscar os posts:", error));
   }, []);
 

@@ -89,8 +89,8 @@ export const FAQSection = () => {
       </div>
 
       {/* CTA Button */}
-      <div className="w-full flex mt-8 sm:mt-12 px-4">
-        <ButtonCta className="mx-auto" />
+      <div className="w-full flex">
+        <ButtonCta className="mx-auto mt-8 sm:mt-12 px-4" />
       </div>
     </section>
   );

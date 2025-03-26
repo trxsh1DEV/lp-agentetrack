@@ -106,7 +106,10 @@ export const FormSection = () => {
         <div className="flex-1 text-white p-6 flex flex-col justify-center">
           <h2 className="text-5xl font-bold mb-4">
             Solicite sua demonstração{" "}
-            <span className="text-emerald-300"> gratuita!</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-500">
+              {" "}
+              gratuita!
+            </span>
           </h2>
           <Image
             src="https://agentezero-api.infonova.com.br/static/files/content/images_lp/images/form2.png"
@@ -215,15 +218,15 @@ export const FormSection = () => {
                 )}
               />
 
-              <div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="bg-gradient-to-r w-full from-violet-500 to-indigo-500 text-xl py-6 hover:opacity-85 mt-6 font-bold"
-                >
-                  QUERO AGENDAR MINHA DEMONSTRAÇÃO
-                </Button>
-              </div>
+              {/* <div className=""> */}
+              <Button
+                type="submit"
+                size="lg"
+                className="bg-gradient-to-r from-violet-500 to-indigo-500 text-base sm:text-2xl py-6 sm:py-8 font-bold w-full sm:w-auto hover:scale-105 transform transition-transform duration-300 whitespace-normal"
+              >
+                QUERO AGENDAR MINHA DEMONSTRAÇÃO
+              </Button>
+              {/* </div> */}
             </form>
           </Form>
         </CardContent>
