@@ -43,8 +43,8 @@ const formSchema = z
       .string()
       .min(11, { message: "Número inválido!" })
       .max(12, { message: "Número inválido!" }),
-    position: z.string().max(50),
-    business: z.string().max(100),
+    position: z.string().max(50).min(2, "O campo posição é obrigatório"),
+    // business: z.string().max(100),
     email: z.string().email("Digite um e-mail válido"),
   })
   .refine((data) => data.email || data.phone, {
@@ -63,7 +63,7 @@ export const FormSection = () => {
     defaultValues: {
       fullName: "",
       phone: "",
-      business: "",
+      // business: "",
       position: "",
       email: "",
     },
@@ -158,7 +158,7 @@ export const FormSection = () => {
                   </FormItem>
                 )}
               />
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="business"
                 render={({ field }) => (
@@ -173,7 +173,7 @@ export const FormSection = () => {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
               <FormField
                 control={form.control}
                 name="phone"
